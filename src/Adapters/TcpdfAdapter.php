@@ -51,7 +51,6 @@ class TcpdfAdapter extends TCPDF implements PdfAdapter
             $this->pdfDocument instanceof \Tenthfeet\Pdf\Contracts\HasHeader
         ) {
             $this->pdfDocument->header($this);
-            $this->setTopMargin($this->GetY() - 7);
         }
     }
 
