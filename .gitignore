@@ -1,0 +1,12 @@
+/vendor/
+composer.lock
+.phpstorm.meta.php
+.idea/
+.vscode/
+.env
+.phpunit.result.cache
+phpunit.xml
+node_modules/
+npm-debug.log
+yarn-error.log
+.DS_Store

@@ -1,0 +1,44 @@
+{
+    "name": "tenthfeet/laravel-pdf",
+    "description": "A portable PDF adapter for Laravel supporting multiple drivers.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ayyamperumal J",
+            "email": "mail@tenthfeet.com",
+            "homepage": "https://tenthfeet.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/tenthfeet/laravel-pdf",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "suggest": {
+        "tecnickcom/tcpdf": "Required to use the TCPDF driver.",
+        "dompdf/dompdf": "Required to use the Dompdf driver."
+    },
+    "autoload": {
+        "psr-4": {
+            "Tenthfeet\\Pdf\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tenthfeet\\Pdf\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tenthfeet\\Pdf\\PdfServiceProvider"
+            ]
+        }
+    }
+}
