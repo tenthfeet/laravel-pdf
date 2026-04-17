@@ -15,7 +15,7 @@ class PdfManager extends Manager
      */
     public function getDefaultDriver()
     {
-        return $this->container['config']['pdf.default'] ?? 'tcpdf';
+        return $this->config->get('pdf.default', 'tcpdf');
     }
 
     /**
@@ -35,7 +35,7 @@ class PdfManager extends Manager
      */
     protected function createDompdfDriver()
     {
-        $class = $this->container['config']['pdf.drivers.dompdf.class'] ?? 'Tenthfeet\Pdf\Adapters\DompdfAdapter';
+        $class = $this->config->get('pdf.drivers.dompdf.class', 'Tenthfeet\Pdf\Adapters\DompdfAdapter');
         
         if (!class_exists($class)) {
              throw new InvalidArgumentException("Driver [dompdf] is not implemented yet or class [{$class}] not found.");

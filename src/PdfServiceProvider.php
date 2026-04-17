@@ -13,9 +13,11 @@ class PdfServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/pdf.php', 'pdf');
 
-        $this->app->singleton('pdf.manager', function ($app) {
+        $this->app->singleton(PdfManager::class, function ($app) {
             return new PdfManager($app);
         });
+
+        $this->app->alias(PdfManager::class, 'pdf.manager');
     }
 
     /**

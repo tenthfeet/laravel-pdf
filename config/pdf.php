@@ -5,7 +5,7 @@ return [
 
     'drivers' => [
         'tcpdf' => [
-            'class' => \Tenthfeet\PdfAdapter\Adapters\TcpdfAdapter::class,
+            'class' => \Tenthfeet\Pdf\Adapters\TcpdfAdapter::class,
         ],
         'dompdf' => [
             'class' => null, // To be implemented
