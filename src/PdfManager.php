@@ -36,9 +36,9 @@ class PdfManager extends Manager
     protected function createDompdfDriver()
     {
         $class = $this->config->get('pdf.drivers.dompdf.class', 'Tenthfeet\Pdf\Adapters\DompdfAdapter');
-        
+
         if (!class_exists($class)) {
-             throw new InvalidArgumentException("Driver [dompdf] is not implemented yet or class [{$class}] not found.");
+            throw new InvalidArgumentException("Driver [dompdf] is not implemented yet or class [{$class}] not found.");
         }
 
         return new $class();
@@ -53,11 +53,11 @@ class PdfManager extends Manager
     public function make(PdfDocument $document)
     {
         $driver = $document->driver ?: $this->getDefaultDriver();
-        
-        $adapter = $this->driver($driver);
-        
+
+        $adapter = $this->createDriver($driver);
+
         $adapter->setPdfDocument($document);
-        
+
         return new PdfResponse($adapter);
     }
 }

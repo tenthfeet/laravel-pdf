@@ -7,6 +7,7 @@ use Tenthfeet\Pdf\Contracts\PdfAdapter;
 use Tenthfeet\Pdf\PdfDocument;
 use Exception;
 
+#[\AllowDynamicProperties]
 class TcpdfAdapter extends TCPDF implements PdfAdapter
 {
     protected ?PdfDocument $pdfDocument = null;
